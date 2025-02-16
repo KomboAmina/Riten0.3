@@ -30,17 +30,18 @@ public class InterestGUI extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        txtSimplePrincipal = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        btnSimpleClear = new javax.swing.JButton();
+        lblSimpleInterest = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         lblSimpleTotal = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        txtSimplePrincipal = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtSimpleRate = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         txtSimpleTime = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtSimpleAmount = new javax.swing.JTextField();
-        btnSimpleCalculate = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -55,7 +56,6 @@ public class InterestGUI extends javax.swing.JFrame {
         btnCompoundClear = new javax.swing.JButton();
         btnCompoundCalculate = new javax.swing.JButton();
         cmbPeriod = new javax.swing.JComboBox<>();
-        btnSimpleClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Riten0.3 Interest Calculator");
@@ -71,25 +71,65 @@ public class InterestGUI extends javax.swing.JFrame {
 
         jTabbedPane1.setFont(jTabbedPane1.getFont());
 
-        txtSimplePrincipal.setFont(new java.awt.Font("Cascadia Mono", 0, 12)); // NOI18N
-        txtSimplePrincipal.setText("0");
+        jLabel2.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
+        jLabel2.setText("SIMPLE INTEREST");
+
+        btnSimpleClear.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
+        btnSimpleClear.setText("Clear");
+        btnSimpleClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimpleClearActionPerformed(evt);
+            }
+        });
+
+        lblSimpleInterest.setBackground(new java.awt.Color(255, 255, 255));
+        lblSimpleInterest.setFont(new java.awt.Font("Cascadia Mono", 1, 24)); // NOI18N
+        lblSimpleInterest.setForeground(new java.awt.Color(12, 22, 21));
+        lblSimpleInterest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSimpleInterest.setText("0.0000000");
+        lblSimpleInterest.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(12, 22, 21), 5, true));
+
+        jLabel12.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(12, 22, 21));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Interest Amount");
+
+        lblSimpleTotal.setBackground(new java.awt.Color(255, 255, 255));
+        lblSimpleTotal.setFont(new java.awt.Font("Cascadia Mono", 1, 24)); // NOI18N
+        lblSimpleTotal.setForeground(new java.awt.Color(12, 22, 21));
+        lblSimpleTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSimpleTotal.setText("0.0000000");
+        lblSimpleTotal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(12, 22, 21), 5, true));
+
+        jLabel13.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(12, 22, 21));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Total (Principal + Interest)");
 
         jLabel1.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setLabelFor(txtSimplePrincipal);
         jLabel1.setText("Principal");
 
-        jLabel2.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
-        jLabel2.setText("SIMPLE INTEREST");
-
-        jLabel4.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setLabelFor(txtSimpleTime);
-        jLabel4.setText("Time (Years)");
-
-        lblSimpleTotal.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        lblSimpleTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblSimpleTotal.setText("Total: Principal + Interest = 0.0");
+        txtSimplePrincipal.setFont(new java.awt.Font("Cascadia Mono", 0, 12)); // NOI18N
+        txtSimplePrincipal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtSimplePrincipal.setText("0");
+        txtSimplePrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtSimplePrincipal.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtSimplePrincipalFocusLost(evt);
+            }
+        });
+        txtSimplePrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSimplePrincipalActionPerformed(evt);
+            }
+        });
+        txtSimplePrincipal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSimplePrincipalKeyTyped(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -97,30 +137,32 @@ public class InterestGUI extends javax.swing.JFrame {
         jLabel3.setText("Rate (%)");
 
         txtSimpleRate.setFont(new java.awt.Font("Cascadia Mono", 0, 12)); // NOI18N
+        txtSimpleRate.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtSimpleRate.setText("0.0");
+        txtSimpleRate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtSimpleRate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtSimpleRateFocusLost(evt);
+            }
+        });
         txtSimpleRate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSimpleRateActionPerformed(evt);
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setLabelFor(txtSimpleTime);
+        jLabel4.setText("Years");
+
         txtSimpleTime.setFont(new java.awt.Font("Cascadia Mono", 0, 12)); // NOI18N
+        txtSimpleTime.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtSimpleTime.setText("1");
-
-        jLabel5.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel5.setLabelFor(txtSimpleAmount);
-        jLabel5.setText("Interest Amount");
-
-        txtSimpleAmount.setEditable(false);
-        txtSimpleAmount.setFont(new java.awt.Font("Cascadia Mono", 0, 12)); // NOI18N
-        txtSimpleAmount.setText("0");
-
-        btnSimpleCalculate.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
-        btnSimpleCalculate.setText("->");
-        btnSimpleCalculate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimpleCalculateActionPerformed(evt);
+        txtSimpleTime.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtSimpleTime.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtSimpleTimeFocusLost(evt);
             }
         });
 
@@ -129,62 +171,70 @@ public class InterestGUI extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(50, 50, 50)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(26, 26, 26))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSimpleClear, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 2, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblSimpleInterest, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblSimpleTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSimpleTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnSimpleCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtSimplePrincipal)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtSimpleAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtSimpleRate, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(12, 12, 12)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtSimpleTime, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(154, 154, Short.MAX_VALUE))))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txtSimplePrincipal))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtSimpleRate, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSimpleTime, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(81, 81, 81))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblSimpleTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(btnSimpleClear))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSimplePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel12)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblSimpleInterest, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSimpleRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblSimpleTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSimpleTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtSimpleAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSimpleCalculate)
-                .addContainerGap())
+                        .addComponent(txtSimpleTime))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSimpleRate))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSimplePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18))
         );
 
         jTabbedPane1.addTab("Simple Interest", jPanel1);
@@ -305,14 +355,6 @@ public class InterestGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Compound Interest", jPanel2);
 
-        btnSimpleClear.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
-        btnSimpleClear.setText("Clear");
-        btnSimpleClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimpleClearActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -320,19 +362,14 @@ public class InterestGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSimpleClear, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(160, 160, 160))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addComponent(btnSimpleClear))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         pack();
@@ -350,7 +387,9 @@ public class InterestGUI extends javax.swing.JFrame {
        
        txtSimpleTime.setText("1");
        
-       txtSimpleAmount.setText("0");
+       lblSimpleInterest.setText("0.00");
+       
+       lblSimpleTotal.setText("0.00");
         
     }//GEN-LAST:event_btnSimpleClearActionPerformed
 
@@ -370,18 +409,12 @@ public class InterestGUI extends javax.swing.JFrame {
         
         BigDecimal total = principal.add(interest);
         
-        txtSimpleAmount.setText(String.valueOf(interest));
+        lblSimpleInterest.setText(String.valueOf(interest));
         
-        lblSimpleTotal.setText("Total: Principal + Interest = "+String.valueOf(total));
+        lblSimpleTotal.setText(String.valueOf(total));
         
     }
     
-    private void btnSimpleCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpleCalculateActionPerformed
-        
-        this.performSimpleInterestFeature();
-        
-    }//GEN-LAST:event_btnSimpleCalculateActionPerformed
-
     private void btnCompoundClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompoundClearActionPerformed
         
         txtCompoundPrincipal.setText("0.00");
@@ -419,6 +452,36 @@ public class InterestGUI extends javax.swing.JFrame {
         txtCompoundAmount.setText(String.valueOf(interest));
         
     }//GEN-LAST:event_btnCompoundCalculateActionPerformed
+
+    private void txtSimplePrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSimplePrincipalActionPerformed
+        
+       
+        
+    }//GEN-LAST:event_txtSimplePrincipalActionPerformed
+
+    private void txtSimplePrincipalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSimplePrincipalKeyTyped
+       
+       
+       
+    }//GEN-LAST:event_txtSimplePrincipalKeyTyped
+
+    private void txtSimplePrincipalFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSimplePrincipalFocusLost
+        
+        this.performSimpleInterestFeature();
+        
+    }//GEN-LAST:event_txtSimplePrincipalFocusLost
+
+    private void txtSimpleRateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSimpleRateFocusLost
+        
+        this.performSimpleInterestFeature();
+        
+    }//GEN-LAST:event_txtSimpleRateFocusLost
+
+    private void txtSimpleTimeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSimpleTimeFocusLost
+        
+        this.performSimpleInterestFeature();
+        
+    }//GEN-LAST:event_txtSimpleTimeFocusLost
 
     /**
      * @param args the command line arguments
@@ -458,16 +521,16 @@ public class InterestGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCompoundCalculate;
     private javax.swing.JButton btnCompoundClear;
-    private javax.swing.JButton btnSimpleCalculate;
     private javax.swing.JButton btnSimpleClear;
     private javax.swing.JComboBox<String> cmbPeriod;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -475,12 +538,12 @@ public class InterestGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblSimpleInterest;
     private javax.swing.JLabel lblSimpleTotal;
     private javax.swing.JTextField txtCompoundAmount;
     private javax.swing.JTextField txtCompoundPrincipal;
     private javax.swing.JTextField txtCompoundRate;
     private javax.swing.JTextField txtCompoundTime;
-    private javax.swing.JTextField txtSimpleAmount;
     private javax.swing.JTextField txtSimplePrincipal;
     private javax.swing.JTextField txtSimpleRate;
     private javax.swing.JTextField txtSimpleTime;

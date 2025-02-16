@@ -17,6 +17,8 @@ public class SimpleInterestCalculator {
         
         BigDecimal interest = new BigDecimal(String.valueOf(principal));
         
+        rate = rate.divide(new BigDecimal("100"),4, BigDecimal.ROUND_HALF_EVEN);
+        
         interest = interest.multiply(rate);
         
         interest = interest.multiply(time);
