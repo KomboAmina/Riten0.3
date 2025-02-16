@@ -407,7 +407,11 @@ public class InterestGUI extends javax.swing.JFrame {
         
         interest = calc.calculateInterest(principal, rate, time);
         
+        interest = interest.setScale(2, BigDecimal.ROUND_CEILING);
+        
         BigDecimal total = principal.add(interest);
+        
+        total = total.setScale(2, BigDecimal.ROUND_CEILING);
         
         lblSimpleInterest.setText(String.valueOf(interest));
         
