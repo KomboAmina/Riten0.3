@@ -5,7 +5,7 @@
 
 /**
  *
- * @author Xan
+ * @author Amina Kombo
  * 
  * SI=P*R*T
  */

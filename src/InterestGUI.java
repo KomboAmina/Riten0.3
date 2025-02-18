@@ -445,10 +445,6 @@ public class InterestGUI extends javax.swing.JFrame {
         
         String compounder = cmbPeriod.getSelectedItem().toString();
         
-        /*PeriodConverter conv = new PeriodConverter();
-        
-        BigDecimal period = conv.convert(compounder);*/
-        
         BigDecimal period = new PeriodConverter().convert(compounder);
      
         BigDecimal interest = calc.calculateInterest(principal, rate, time, period);
